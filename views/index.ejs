@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Minimal | The Minimalist Blog Ever</title>
+</head>
+
+<body>
+    <nav class="navigation">
+        <b class="nav-title">Blog.</b>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/search">Search</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <a href="/blog/<%=latest._id %>" class="latest">
+            <img src=<%=latest.thumbnail %> alt="">
+            <div class="latestCnt">
+                <h2 class="title">
+                    <%= latest.title %>
+                </h2>
+                <p>
+                    <%=latest.description %>
+                </p>
+            </div>
+        </a>
+        <div class="container">
+            <h1>My Articles</h1>
+            <div class="grid">
+                <% for(var i=0;i<blogs.length;i++){ %>
+                    <a href="/blog/<%=blogs[i]._id %>" class="card">
+                        <div class="imgBx">
+                            <img src=<%=blogs[i].thumbnail %> alt="">
+                        </div>
+                        <div class="cardCnt">
+                            <h2 class="title">
+                                <%= blogs[i].title %>
+                            </h2>
+                            <p>
+                                <%=blogs[i].description %>
+                            </p>
+                        </div>
+                    </a>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

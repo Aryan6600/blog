@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/search.css">
+    <title>Search For A Blog | Blog </title>
+</head>
+
+<body>
+    <a href="/" class="back">Go Back</a>
+    <div class="container">
+        <img src="/logo.png" alt="">
+        <div class="mainwrapper">
+            <div class="textwrapper">
+                <input type="text" placeholder="Start Typing and see the magic" name="q" id="txt" onkeyup="search()"
+                    autocomplete="off">
+            </div>
+            <div id="results">
+            </div>
+        </div>
+    </div>
+    <script>
+        var txt = document.getElementById('txt');
+        function search() {
+            console.log("Searching", txt.value);
+            var xhr = new XMLHttpRequest();
+            if (txt.value != "") {
+                xhr.open('GET', '/search?q=' + txt.value);
+                xhr.onload = function () {
+                    document.getElementById('results').classList.add('active')
+                    this.responseJson = JSON.parse(this.responseText);
+                    if (this.responseJson.length == 0) {
+                        document.getElementById('results').innerHTML = "<p style='padding:10px;border-top:1px solid lightgray;'>No results found. Try Searchig Something Else</p>"
+                    } else {
+                        document.getElementById('results').innerHTML = ""
+                        this.responseJson.forEach(data => {
+                            const a = document.createElement('a');
+                            a.innerHTML = data.title;
+                            a.classList = "search-result";
+                            a.href = "/blog/" + data._id;
+                            const p = document.createElement('p');
+                            p.innerText = data.description;
+                            p.classList = "result-description";
+                            a.appendChild(p)
+                            document.getElementById('results').appendChild(a)
+                        })
+                    }
+                }
+                xhr.send();
+            } else {
+                document.getElementById('results').classList.remove('active')
+            }
+        };
+    </script>
+</body>
+
+</html>

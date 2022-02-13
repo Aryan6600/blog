@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(236, 236, 236);
+}
+.back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 18px;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.back:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.container {
+  height: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 10px;
+  position: relative;
+}
+@media (min-width: 726px) {
+  .container {
+    justify-content: center;
+  }
+}
+.container .textwrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .textwrapper input {
+  border: none;
+  outline: none;
+  padding: 15px 10px;
+  width: 100%;
+  font-size: 19px;
+}
+.container .btn {
+  padding: 10px 20px;
+  background-color: rgb(223, 223, 223);
+  outline: none;
+  border: none;
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.mainwrapper {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.mainwrapper:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+#results {
+  display: none;
+  flex-direction: column;
+  min-width: 100%;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  max-height: 50vh;
+  overflow-y: auto;
+  animation: fadeout 0.5s forwards;
+}
+#results.active {
+  display: flex;
+  animation: fadein 0.5s forwards;
+}
+.search-result {
+  border-top: 1px solid lightgray;
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.result-description {
+  font-size: 14px;
+  color: gray;
+  margin-top: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.search-result:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}

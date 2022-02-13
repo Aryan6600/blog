@@ -1,0 +1,88 @@
+* {
+  line-height: 23px;
+}
+div {
+  overflow-x: auto;
+  padding: 5px;
+}
+div::-webkit-scrollbar {
+  height: 5px;
+}
+div::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 5px;
+  line-height: normal;
+}
+.content {
+  width: 100%;
+  max-width: 800px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content .title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  font-weight: normal;
+}
+.page {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  max-width: 1200px;
+}
+.page h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 3em;
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  font-weight: normal;
+}
+.page ol,
+.page ul {
+  padding: 0 10px;
+  padding-left: 40px;
+}
+.page ol li,
+.page ul li {
+  padding: 5px 0;
+}
+.page .ql-syntax {
+  background-color: #2e2e2e;
+  padding: 10px;
+  border-radius: 3px;
+  user-select: all;
+  color: white;
+  display: block;
+}
+
+@media print {
+  nav {
+    display: none !important;
+  }
+}

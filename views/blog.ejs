@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navigation">
+        <b class="nav-title">Blog.</b>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/search">Search</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1 class="title">
+            <%= data.title %>
+        </h1>
+        <img src="<%=data.thumbnail%>" />
+        <div class="page">
+            <%-data.body %>
+        </div>
+    </div>
+</body>
+
+</html>

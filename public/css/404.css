@@ -1,0 +1,13 @@
+.content {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error {
+  position: relative;
+}
+.error h1 {
+  font-size: 20vw;
+  color: lightgray;
+}

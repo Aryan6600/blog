@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" /richtexteditor/rte_theme_default.css" />
+    <script type="text/javascript" src="/richtexteditor/rte.js"></script>
+    <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/Admin.compose.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <title>Compose | <%=admin.username%>
+    </title>
+</head>
+
+<body>
+    <nav class="navigation">
+        <b class="nav-title">Blog.</b>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/search">All Posts</a></li>
+        </ul>
+    </nav>
+    <form action="" method="POST" class="container">
+        <input type="text" name="title" value="<%=blog.title %>" id="" placeholder="Enter Blog Title" class="title"
+            required>
+        <input type="text" name="description" value="<%=blog.description %>" placeholder="Enter Blog Description" id=""
+            class="desc" required>
+        <input type="text" name="thumbnail" value="<%=blog.thumbnail %>" class="image" placeholder="Enter Image Url"
+            required>
+        <textarea name="" id="input" cols="30" rows="10" required>
+            <%=blog.body %>
+        </textarea>
+        <input type="hidden" id="body" name="body" value="<%=blog.body %>">
+        <button id="submit" type="submit" class="btn">Submit</button>
+    </form>
+    <script>
+        var editor1 = new RichTextEditor("#input");
+        editor1.attachEvent("change", function () {
+            document.getElementById("body").value = editor1.getHTML()
+        });
+    </script>
+</body>
+
+</html>
