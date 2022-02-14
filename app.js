@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+require('dotenv').config();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const session = require('express-session')
@@ -8,7 +10,7 @@ const session = require('express-session')
 app.use(express.static('public'));
 app.set('view engine', 'ejs')
 app.use(session({
-    secret: '#@$%^&*',
+    secret: process.env.SESSION_SECREAT,
     resave: true,
     saveUninitialized: true
 }))
