@@ -106,8 +106,9 @@
 
 .card .cardCnt .title {
   margin-bottom: 10px;
-  font-weight: normal;
-  color: rgb(22, 22, 22);
+  font-weight: 400;
+  color: black;
+  font-size: 18px;
 }
 .card .cardCnt p {
   white-space: nowrap;

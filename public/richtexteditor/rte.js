@@ -70,7 +70,7 @@ RTE_DefaultConfig.previewCssText = "";//"body{background-color:#eee}"; 	Gets or 
 RTE_DefaultConfig.editorBodyCssClass = "";  //Gets or sets the class of editing area to switch styles.
 RTE_DefaultConfig.editorBodyCssText = "";   // Gets or sets inline CSS text that will be used by the editable body.
 
-RTE_DefaultConfig.paragraphClass = "paragraph";	// auto add class name to new paragraphs
+RTE_DefaultConfig.paragraphClass = "";	// auto add class name to new paragraphs
 RTE_DefaultConfig.insertTableTag = "<table></table>"; // Default table attributes when inserting a table.
 RTE_DefaultConfig.insertRowTag = "<tr></tr>"; // Default row attributes when creating table row.
 RTE_DefaultConfig.insertCellTag = "<td><br/></td>"; // Default cell attributes when inserting a cell.
