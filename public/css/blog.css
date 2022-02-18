@@ -15,16 +15,6 @@ div::-webkit-scrollbar {
 div::-webkit-scrollbar-thumb {
   background-color: #ccc;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding: 5px 0 !important;
-  line-height: normal;
-  margin-top: 10px;
-}
 .content {
   width: 100%;
   max-width: 800px;
@@ -37,7 +27,7 @@ h6 {
 }
 @media (min-width:768px) {
   .content{
-    font-size: 1.5vw;
+    font-size: 1.2vw;
   }
 }
 .content img {
@@ -51,27 +41,27 @@ h6 {
   margin-bottom: 1rem;
   width: 100%;
   text-align: center;
-  font-size: 2em;
+  font-size: 3rem;
   padding: 10px;
   font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
     sans-serif;
   font-weight: normal;
 }
+
 .page {
   box-sizing: border-box;
   padding: 10px;
   width: 100%;
-  max-width: 1200px;
 }
-.page h1 {
-  font-size: 2rem;
-  font-weight: normal;
-  margin-bottom: 1rem;
+.page h1,
+.page h2,
+.page h3 ,
+.page h4 ,
+.page h5  {
+  margin-top: 1rem;
   width: 100%;
-  font-size: 3em;
-  padding: 10px;
-  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
-    sans-serif;
+  padding: 15px 0 !important;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",sans-serif;
   font-weight: normal;
 }
 .page ol,
@@ -82,14 +72,6 @@ h6 {
 .page ol li,
 .page ul li {
   padding: 5px 0;
-}
-.page .ql-syntax {
-  background-color: #2e2e2e;
-  padding: 10px;
-  border-radius: 3px;
-  user-select: all;
-  color: white;
-  display: block;
 }
 .modal{
   position: fixed;

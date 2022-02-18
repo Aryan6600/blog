@@ -5,7 +5,7 @@ Router.get('/', async (req, res) => { // Search
     const search = req.query.q;
     if (search) {
         try {
-            const blogs = await Blogs.find({ $text: { $search: search } }).limit(10);
+            const blogs = await Blogs.find({ $text: { $search: search } }).select("title description").limit(10);
             res.json(blogs);
         } catch (err) {
             console.log("Error: ", err);
@@ -15,5 +15,6 @@ Router.get('/', async (req, res) => { // Search
         res.render('search.ejs');
     }
 })
+
 
 module.exports = Router;
