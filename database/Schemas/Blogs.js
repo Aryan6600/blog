@@ -1,6 +1,7 @@
 const mongoose = require('../connection.js');
+const slugify = require('slugify');
 
-const BlogsSchema = new mongoose.Schema({
+const BlogsSchema = mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -21,7 +22,21 @@ const BlogsSchema = new mongoose.Schema({
         type: Date,
         required: false,
         default: Date.now
+    },
+    slug: {
+        type: String,
+        required: true,
+        unique: true
     }
+})
+
+
+BlogsSchema.pre('validate', function (next) {
+    // slugify title before saving
+    if (this.title) {
+        this.slug = slugify(this.title, { lower: true, strict: true })
+    }
+    next()
 })
 
 BlogsSchema.index({ title: "text", description: "text" })

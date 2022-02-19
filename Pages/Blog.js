@@ -1,13 +1,12 @@
 const Router = require('express').Router()
 const Blogs = require('../database/Schemas/Blogs.js')
 
-Router.get('/:id', async (req, res) => {
-    const id = req.params.id;
+Router.get('/:slug', async (req, res) => {
+    const slug = req.params.slug;
     try {
-        const blog = await Blogs.findOne({ _id: id });
+        const blog = await Blogs.findOne({ slug: slug });
         res.render('blog.ejs', { data: blog });
     } catch (error) {
-        console.log(error);
         res.render('404.ejs');
     }
 })

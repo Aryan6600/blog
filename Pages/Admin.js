@@ -32,7 +32,6 @@ Router.post(
             }
         } catch (error) {
             res.redirect("/admin");
-            console.log("User is not exist");
         }
     }
 );
@@ -62,14 +61,14 @@ Router.post("/compose", (req, res) => {
         thumbnail,
     });
     blog.save().then(() => {
-        res.redirect("/blog/" + blog._id);
+        res.redirect("/blog/" + blog.slug);
     });
 });
 
-Router.get('/edit/:id', async (req, res) => {
+Router.get('/edit/:slug', async (req, res) => {
     if (!req.session.user) return res.redirect('/admin')
     try {
-        const blog = await Blogs.findById(req.params.id)
+        const blog = await Blogs.findById(req.params.slug)
         res.render('Admin.edit.ejs', { blog: blog, admin: req.session.user })
     } catch (error) {
         res.redirect('/admin/dashboard')
@@ -80,7 +79,12 @@ Router.post('/edit/:id', async (req, res) => {
     if (!req.session.user) return res.redirect('/admin')
     try {
         const { title, description, body, thumbnail } = req.body;
-        const blog = await Blogs.findByIdAndUpdate(req.params.id, { $set: { title, description, body, thumbnail } })
+        const blog = await Blogs.findById(req.params.id)
+        blog.title = title;
+        blog.description = description;
+        blog.body = body;
+        blog.thumbnail = thumbnail;
+        await blog.save()
         res.redirect('/blog/' + blog._id)
     } catch (error) {
         res.redirect('/admin/dashboard')

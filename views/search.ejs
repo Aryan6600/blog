@@ -41,7 +41,7 @@
                             const a = document.createElement('a');
                             a.innerHTML = data.title;
                             a.classList = "search-result";
-                            a.href = "/blog/" + data._id;
+                            a.href = "/blog/" + data.slug;
                             const p = document.createElement('p');
                             p.innerText = data.description;
                             p.classList = "result-description";

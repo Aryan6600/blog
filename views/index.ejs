@@ -21,7 +21,7 @@
         </ul>
     </nav>
     <div class="content">
-        <a href="/blog/<%=latest._id %>" class="latest">
+        <a href="/blog/<%=latest.slug %>" class="latest">
             <img src=<%=latest.thumbnail %> alt="">
             <div class="latestCnt">
                 <h2 class="title">
@@ -36,7 +36,7 @@
             <h1>My Articles</h1>
             <div class="grid">
                 <% for(var i=0;i<blogs.length;i++){ %>
-                    <a href="/blog/<%=blogs[i]._id %>" class="card">
+                    <a href="/blog/<%=blogs[i].slug %>" class="card">
                         <div class="imgBx">
                             <img src=<%=blogs[i].thumbnail %> alt="">
                         </div>
