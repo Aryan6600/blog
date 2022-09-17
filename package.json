@@ -1,6 +1,9 @@
 {
   "name": "aryan-blog",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "main": "app.js",
   "author": "Aryan",
   "license": "MIT",
