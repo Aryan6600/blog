@@ -27,6 +27,11 @@ const BlogsSchema = mongoose.Schema({
         type: String,
         required: true,
         unique: true
+    },
+    status: {
+        type: String,
+        required: false,
+        default: "active"
     }
 })
 

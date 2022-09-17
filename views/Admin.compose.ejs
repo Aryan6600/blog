@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=" /richtexteditor/rte_theme_default.css" />
-    <script type="text/javascript" src="/richtexteditor/rte.js"></script>
-    <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
+    <!-- <link rel="stylesheet" href=" /richtexteditor/rte_theme_default.css" />
+    <script type="text/javascript" src="/richtexteditor/rte.js"></script> -->
+    <!-- <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/css/Admin.compose.css">
     <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="preconnect" href="https://cdn.tiny.cloud">
+    <script src="https://cdn.tiny.cloud/1/xt6uqgie2yag2stlwts3k105fp2ur8ldqu96j2j3cfqz8ckg/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+
     <title>Compose | <%=admin.username%>
     </title>
 </head>
@@ -33,9 +37,15 @@
         <button id="submit" type="submit" class="btn">Submit</button>
     </form>
     <script>
-        var editor1 = new RichTextEditor("#input");
-        editor1.attachEvent("change", function () {
-            document.getElementById("body").value = editor1.getHTML()
+        // var editor1 = new RichTextEditor("#input");
+        // editor1.attachEvent("change", function () {
+        //     document.getElementById("body").value = editor1.getHTML()
+        // });
+        tinymce.init({
+            selector: '#input',
+            plugins: 'quickbars table image link lists media autoresize help',
+            toolbar: 'undo redo | formatselect | bold italic | alignleft aligncentre alignright alignjustify | indent outdent | bullist numlist',
+
         });
     </script>
 </body>
